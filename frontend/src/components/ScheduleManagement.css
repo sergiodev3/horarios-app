@@ -1,0 +1,470 @@
+/* Schedule Management Styles - Tema Morado */
+.schedule-management {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f7fafc 0%, #f3f4ff 100%);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+.title-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title-section p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.group-selector {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.group-selector h3 {
+  margin: 0 0 1rem 0;
+  color: #667eea;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.group-select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #f3f4ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.group-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.shift-selector {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.shift-button {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: 2px solid #f3f4ff;
+  border-radius: 12px;
+  background: white;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.shift-button:hover {
+  background: #f3f4ff;
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+.shift-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.print-button {
+  padding: 1rem 2rem;
+  border: 2px solid #9f7aea;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 160px;
+}
+
+.print-button:hover {
+  background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+  border-color: #805ad5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(159, 122, 234, 0.3);
+}
+
+.print-button:active {
+  transform: translateY(0);
+}
+
+.schedule-table-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.schedule-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-table th:first-child {
+  background: linear-gradient(135deg, #5a67d8 0%, #764ba2 100%);
+  min-width: 120px;
+}
+
+.schedule-table td {
+  border: 1px solid #f3f4ff;
+  padding: 0;
+  vertical-align: top;
+  height: 80px;
+  position: relative;
+}
+
+.time-slot {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #667eea;
+  padding: 1rem;
+  text-align: center;
+  border-right: 2px solid #667eea;
+}
+
+.schedule-cell {
+  height: 100%;
+  min-height: 80px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.schedule-cell:hover {
+  background: #f3f4ff;
+  border-color: #667eea;
+  transform: scale(1.02);
+}
+
+.schedule-cell.filled {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+  border-color: #4caf50;
+}
+
+.schedule-cell.filled:hover {
+  background: linear-gradient(135deg, #c8e6c9 0%, #dcedc8 100%);
+  border-color: #388e3c;
+}
+
+.schedule-cell.break-time {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  color: #f57c00;
+  font-weight: 600;
+  cursor: default;
+  border-color: #ffb74d;
+}
+
+.schedule-cell.break-time:hover {
+  transform: none;
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.cell-content {
+  width: 100%;
+}
+
+.subject-info {
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.teacher-info {
+  color: #558b2f;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.empty-cell {
+  color: #999;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.cell-actions {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.schedule-cell:hover .cell-actions {
+  opacity: 1;
+}
+
+.cell-action-button {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem;
+  margin-left: 0.25rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.cell-action-button:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.cell-action-button.delete {
+  color: #d32f2f;
+}
+
+.cell-action-button.edit {
+  color: #667eea;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  color: #667eea;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f4ff;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-banner {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  color: #c62828;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #ef5350;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-banner .error-icon {
+  font-size: 1.5rem;
+}
+
+.error-close {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.25rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #667eea;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.legend {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.legend h4 {
+  margin: 0 0 1rem 0;
+  color: #667eea;
+  font-size: 1.1rem;
+}
+
+.legend-items {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.legend-color.empty {
+  background: white;
+}
+
+.legend-color.filled {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+  border-color: #4caf50;
+}
+
+.legend-color.break {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-color: #ffb74d;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .schedule-management {
+    padding: 1rem;
+  }
+  
+  .header-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .schedule-table {
+    font-size: 0.8rem;
+  }
+  
+  .schedule-cell {
+    min-height: 60px;
+    padding: 0.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .shift-selector {
+    width: 100%;
+  }
+  
+  .shift-button {
+    flex: 1;
+  }
+  
+  .actions-section {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .print-button {
+    width: 100%;
+  }
+  
+  .legend-items {
+    justify-content: center;
+  }
+  
+  .schedule-table-container {
+    overflow-x: auto;
+  }
+}
